@@ -78,16 +78,22 @@ a {
 
 .field:focus-visible {
   outline: 3px solid #83B3D3;
+  background-color: #E6E6E6;
 }
 
 @supports not selector(:focus-visible) {
   .field:focus {
+    outline: 3px solid #83B3D3;
     background-color: #E6E6E6;
   }
 }
 
 .field:hover {
   background-color: #E6E6E6;
+}
+
+.field:active {
+  outline: 2px solid #000000;
 }
 
 .button {
@@ -107,10 +113,17 @@ a {
   cursor: pointer;
 }
 
-.button:focus,
+.button:focus-visible,
 .button:hover {
   outline: none;
   background-color: #68A2CA;
+}
+
+@supports not selector(:focus-visible) {
+  .button:focus {
+    outline: none;
+    background-color: #68A2CA;
+  }
 }
 
 .button:active {
@@ -126,9 +139,15 @@ a {
   background-color: #756157;
 }
 
-.button--brown:focus,
+.button--brown:focus-visible,
 .button--brown:hover {
   background-color: #615048;
+}
+
+@supports not selector(:focus-visible) {
+  .button--brown:focus {
+    background-color: #615048;
+  }
 }
 
 .button--brown:active {
@@ -143,6 +162,12 @@ a {
 .favorites-button--added:focus,
 .favorites-button--added:hover {
   background-color: #6C9E42;
+}
+
+@supports not selector(:focus-visible) {
+  .favorites-button--added:focus {
+    background-color: #6C9E42;
+  }
 }
 
 .favorites-button--added:active {
@@ -514,6 +539,7 @@ a {
   border-radius: 0 4px 4px 0;
 }
 
+/* Footer */
 .page-footer {
   display: flex;
   padding: 40px 70px;
@@ -542,9 +568,20 @@ a {
   fill: #83B3D3;
 }
 
-.social__link:focus .social__icon,
+.social__link:focus-visible {
+  outline: none;
+}
+
+.social__link:focus-visible .social__icon,
 .social__link:hover .social__icon {
   fill: #68A2CA;
+}
+
+@supports not selector(:focus-visible) {
+  .social__link:focus .social__icon {
+    outline: none;
+    fill: #68A2CA;
+  }
 }
 
 .social__link:active .social__icon {
@@ -557,9 +594,17 @@ a {
   font-style: normal;
 }
 
-.phone-link:focus,
+.phone-link:focus-visible,
 .phone-link:hover {
+  outline: none;
   color: #756157;
+}
+
+@supports not selector(:focus-visible) {
+  .phone-link:focus {
+    outline: none;
+    color: #756157;
+  }
 }
 
 .phone-link:active {
@@ -577,9 +622,20 @@ a {
   fill: #000000;
 }
 
-.academy-logo__link:focus .academy-logo__logo,
+.academy-logo__link:focus-visible {
+  outline: none;
+}
+
+.academy-logo__link:focus-visible .academy-logo__logo,
 .academy-logo__link:hover .academy-logo__logo {
   fill: #756157;
+}
+
+@supports not selector(:focus-visible) {
+  .academy-logo__link:focus {
+    outline: none;
+    fill: #756157;
+  }
 }
 
 .academy-logo__link:active .academy-logo__logo {
@@ -727,9 +783,16 @@ a {
   content: url("../img/icons/tick.svg");
 }
 
-.control__input[type="checkbox"]:focus + .control__mark,
-.control__input[type="radio"]:focus + .control__mark {
+.control__input[type="checkbox"]:focus-visible + .control__mark,
+.control__input[type="radio"]:focus-visible + .control__mark {
   outline: 3px solid #83B3D3;
+}
+
+@supports not selector(:focus-visible) {
+  .control__input[type="checkbox"]:focus + .control__mark,
+  .control__input[type="radio"]:focus + .control__mark {
+    outline: 3px solid #83B3D3;
+  }
 }
 
 .control__input[type="checkbox"]:hover + .control__mark,
@@ -737,9 +800,19 @@ a {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.control__input[type="checkbox"]:hover + .control__mark + .control__label,
+.control__input[type="radio"]:hover + .control__mark + .control__label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .control__input[type="checkbox"]:active + .control__mark,
 .control__input[type="radio"]:active + .control__mark {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control__input[type="checkbox"]:active + .control__mark + .control__label,
+.control__input[type="radio"]:active + .control__mark + .control__label {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .catalog-filter__group--housing-filter {
@@ -815,7 +888,7 @@ a {
 
 /* Mozilla */
 .range-input {
-  appearance:textfield;
+  appearance: textfield;
 }
 
 .range-input--min {
@@ -856,9 +929,16 @@ a {
   cursor: pointer;
 }
 
-.range-toogle:focus {
+.range-toogle:focus-visible {
   outline: 3px solid #83B3D3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+@supports not selector(:focus-visible) {
+  .range-toogle:focus {
+    outline: 3px solid #83B3D3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .range-toogle:hover {
@@ -892,9 +972,16 @@ a {
   background-color: transparent;
 }
 
-.button-reset:focus {
+.button-reset:focus-visible {
   outline: 3px solid #83B3D3;
   background-color: inherit;
+}
+
+@supports not selector(:focus-visible) {
+  .button-reset:focus {
+    outline: 3px solid #83B3D3;
+    background-color: inherit;
+  }
 }
 
 .button-reset:hover {
@@ -946,13 +1033,37 @@ a {
   appearance: none;
 }
 
-.select-control:focus,
+
+.select-control:focus-visible,
 .select-control:hover {
   outline-color: #68A2CA;
 }
 
+@supports not selector(:focus-visible) {
+  .select-control:focus {
+    outline-color: #68A2CA;
+  }
+}
+
+.button-reset:focus-visible {
+  outline: 3px solid #83B3D3;
+  background-color: inherit;
+}
+
+@supports not selector(:focus-visible) {
+  .button-reset:focus {
+    outline: 3px solid #83B3D3;
+    background-color: inherit;
+  }
+}
+
 .select-control:active {
   outline-color: #3F5E72;
+}
+
+.select-control:disabled {
+  outline-color: 2px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .sorting-type::after {
@@ -965,8 +1076,6 @@ a {
 
   content: url("../img/icons/arrow-drop.svg");
 }
-
-
 
 .view-mode {
   display: grid;
@@ -987,15 +1096,22 @@ a {
   border-radius: 4px;
 }
 
+.view-mode-button:focus-visible {
+  border-color: #68A2CA;
+  outline: none;
+}
+
+@supports not selector(:focus-visible) {
+  .view-mode-button:focus {
+    border-color: #68A2CA;
+    outline: none;
+  }
+}
+
 .view-mode-button.current-mode,
 .view-mode-button:hover,
 .view-mode-button:active {
   border-color: #000000;
-}
-
-.view-mode-button:focus {
-  border-color: #68A2CA;
-  outline: none;
 }
 
 .suitable-hotels {
@@ -1163,9 +1279,16 @@ a {
   background-color: #F2F2F2;
 }
 
-.popover__close-button:focus {
+.popover__close-button:focus-visible {
   background-color: #F2F2F2;
   outline: 3px solid #83B3D3;
+}
+
+@supports not selector(:focus-visible) {
+  .popover__close-button:focus {
+    background-color: #F2F2F2;
+    outline: 3px solid #83B3D3;
+  }
 }
 
 .popover__close-button:hover,
@@ -1229,7 +1352,7 @@ a {
 .date-input::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 20px;
-  
+
   background-image: url("../img/icons/date.svg");
 }
 
@@ -1328,9 +1451,16 @@ a {
 
 
 
-.amount-button:focus {
+.amount-button:focus-visible {
   background-color: transparent;
   outline: 3px solid #82B3D3;
+}
+
+@supports not selector(:focus-visible) {
+  .amount-button:focus {
+    background-color: transparent;
+    outline: 3px solid #82B3D3;
+  }
 }
 
 .amount-button:hover {
