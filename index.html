@@ -49,7 +49,7 @@
       </symbol>
 
       <symbol id="modal-booking-info">
-        <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
+        <circle cx="13" cy="13" r="13"/>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
       </symbol>
     </svg>
@@ -263,9 +263,7 @@
           </ul>
         </section>
 
-        <address class="page-footer__contact-phone">
-          <a class="phone-link" target="_blank" href="tel:+78128121212">+7 (812) 812-12-12</a>
-        </address>
+        <a class="phone-link" target="_blank" href="tel:+78128121212">+7 (812) 812-12-12</a>
 
         <div class="academy-logo">
           <a class="academy-logo__link" href="https://htmlacademy.ru/">
@@ -327,10 +325,14 @@
               <div class="search-form__field-wrapper">
                 <label class="search-form__label search-form__label--kids" for="kids-amount">Дети:</label>
 
-                <div class="booking-info" tabindex="0">
-                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="#modal-booking-info"></use>
-                  </svg>
+                <div class="booking-info-tooltip">
+                  <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-info">
+                    <svg class="tooltip-info-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="#modal-booking-info"></use>
+                    </svg>
+
+                    <span class="tooltip-text" role="tooltip" id="tooltip-info">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                  </button>
                 </div>
 
                 <div class="search-form__counter">
