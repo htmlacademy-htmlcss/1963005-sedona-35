@@ -101,6 +101,10 @@ svg.sprite {
   outline: 2px solid #000000;
 }
 
+.field:disabled {
+  opacity: 0.3;
+}
+
 .button {
   display: block;
   box-sizing: border-box;
@@ -134,10 +138,6 @@ svg.sprite {
 .button:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82B3D3;
-}
-
-.button:disabled {
-  background-color: #E5E5E5;
 }
 
 .button--brown {
@@ -177,6 +177,12 @@ svg.sprite {
 
 .favorites-button--added:active {
   background-color: #7DB54F;
+}
+
+.button:disabled,
+.button--brown:disabled,
+.favorites-button--added:disabled {
+  background-color: #E5E5E5;
 }
 
 /* Pages */
@@ -253,7 +259,13 @@ svg.sprite {
   padding: 20px 16px;
 }
 
+.header-navigation__link:hover:not(.current-page) {
+  opacity: 0.6;
+}
 
+.header-navigation__link:active:not(.current-page) {
+  opacity: 0.3;
+}
 
 .current-page::after {
   position: absolute;
@@ -293,6 +305,16 @@ svg.sprite {
 
 .user-list__icon {
   align-self: center;
+
+  fill: #000000;
+}
+
+.user-list__link:hover .user-list__icon {
+  opacity: 0.6;
+}
+
+.user-list__link:active .user-list__icon {
+  opacity: 0.3;
 }
 
 .fav-amount {
@@ -725,16 +747,14 @@ svg.sprite {
   fill: #FFFFFF;
 }
 
-.breadcrumbs__link:hover,
+.breadcrumbs__link:hover:not(.breadcrumbs-current-page),
 .breadcrumbs__link:hover .breadcrumbs__icon {
-  color: rgba(255, 255, 255, 0.6);
-  fill: rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
 }
 
-.breadcrumbs__link:hover,
-.breadcrumbs__link:hover .breadcrumbs__icon {
-  color: rgba(255, 255, 255, 0.3);
-  fill: rgba(255, 255, 255, 0.3);
+.breadcrumbs__link:active:not(.breadcrumbs-current-page),
+.breadcrumbs__link:active .breadcrumbs__icon {
+  opacity: 0.3;
 }
 
 
@@ -814,36 +834,26 @@ svg.sprite {
   content: url("../img/icons/tick.svg");
 }
 
-.control__input[type="checkbox"]:focus-visible + .control__mark,
-.control__input[type="radio"]:focus-visible + .control__mark {
+.control__input:focus-visible + .control__mark {
   outline: 3px solid #83B3D3;
 }
 
 @supports not selector(:focus-visible) {
-  .control__input[type="checkbox"]:focus + .control__mark,
-  .control__input[type="radio"]:focus + .control__mark {
+  .control__input:focus + .control__mark {
     outline: 3px solid #83B3D3;
   }
 }
 
-.control__input[type="checkbox"]:hover + .control__mark,
-.control__input[type="radio"]:hover + .control__mark {
-  background-color: rgba(255, 255, 255, 0.6);
+.control__input:hover + .control__mark,
+.control__input:hover + .control__mark + .control__label {
+  opacity: 0.6;
 }
 
-.control__input[type="checkbox"]:hover + .control__mark + .control__label,
-.control__input[type="radio"]:hover + .control__mark + .control__label {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.control__input[type="checkbox"]:active + .control__mark,
-.control__input[type="radio"]:active + .control__mark {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.control__input[type="checkbox"]:active + .control__mark + .control__label,
-.control__input[type="radio"]:active + .control__mark + .control__label {
-  color: rgba(255, 255, 255, 0.3);
+.control__input:active + .control__mark,
+.control__input:active + .control__mark + .control__label,
+.control__input:disabled + .control__mark,
+.control__input:disabled + .control__mark + .control__label {
+  opacity: 0.3;
 }
 
 .control__input[type="radio"] + .control__mark {
@@ -1084,24 +1094,23 @@ svg.sprite {
   }
 }
 
+.button-reset:disabled {
+  opacity: 0.3;
+}
+
 .select-control:active {
   outline-color: #3F5E72;
 }
 
-.select-control:disabled {
-  outline-color: 2px solid rgba(0, 0, 0, 0.3);
-  color: rgba(0, 0, 0, 0.3);
+.arrow-drop {
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 21px;
 }
 
-.sorting-type::after {
-  position: absolute;
-  top: 11px;
-  right: 21px;
-
-  width: 12px;
-  height: 8px;
-
-  content: url("../img/icons/arrow-drop.svg");
+.select-control:disabled,
+.select-control:disabled + .arrow-drop {
+  opacity: 0.3;
 }
 
 .view-mode {
@@ -1520,7 +1529,7 @@ svg.sprite {
   margin-right: 10px;
 }
 
-.booking-info {
+.booking-info-tooltip {
   position: relative;
 
   width: 26px;
@@ -1528,38 +1537,83 @@ svg.sprite {
   margin-right: 36px;
 }
 
-.booking-info::before {
-  position: absolute;
-  top: 40px;
-  left: -120px;
+.tooltip-toggle {
+  display: block;
+  margin: 0;
+  padding: 0;
 
-  width: 216px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tooltip-info-icon {
+  display: block;
+
+  fill: #83B3D3;
+}
+
+.tooltip-toggle:focus-visible {
+  outline: none;
+}
+
+.tooltip-toggle:focus-visible .tooltip-info-icon,
+.tooltip-toggle:hover .tooltip-info-icon {
+  opacity: 0.6;
+
+}
+
+@supports not selector(:focus-visible) {
+  .tooltip-tooggle:focus .tooltip-info-icon {
+    opacity: 0.6;
+  }
+}
+
+.tooltip-toggle:active .tooltip-info-icon {
+  opacity: 0.3;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: calc(50% - 4px);
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: none;
+  width: 246px;
   padding: 15px 20px;
 
   font-size: 16px;
   line-height: 20px;
+  text-align: start;
 
-  content: "Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.";
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #333333;
   color: #FFFFFF;
-  opacity: 0;
+  box-sizing: border-box;
 }
 
-.booking-info::after {
+.tooltip-text::after {
   position: absolute;
-  top: 23px;
+  right: 0;
+  bottom: 100%;
   left: 0;
 
-  content: url("../img/icons/arrow-up.svg");
-  opacity: 0;
+  width: 19px;
+  height: 9px;
+  margin: 0 auto;
+
+  content: "";
+  background-image: url("../img/icons/arrow-up.svg");
 }
 
-.booking-info:hover::before,
-.booking-info:hover::after {
-  opacity: 1;
+.tooltip-toggle:hover .tooltip-text,
+.tooltip-toggle:focus .tooltip-text {
+  display: block;
 }
+
 
 .search-form__submit-button {
   width: 100%;
