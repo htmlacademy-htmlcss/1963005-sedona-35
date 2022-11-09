@@ -1,20 +1,26 @@
+const body = document.body;
 const modal = document.querySelector(".modal-container");
 const modalCloseButton = modal.querySelector(".modal__close-button");
-const openModalButton = document.querySelector(".hotel-search__button");
-const p = document.querySelector(".page-container")
+const navSearchOpenModalButton = document.querySelector(".user-list__link.search-icon")
 
-const showModal = () => {
-  document.body.style.overflowY = "hidden";
-  
+const showModal = (event) => {
+  event.preventDefault();
+
+  body.style.overflowY = "hidden";
   modal.classList.add("modal-container--open");
 };
 
 const closeModal = () => {
-  document.body.style.overflowY = "scroll";
-
+  body.style.overflowY = ""
   modal.classList.remove("modal-container--open");
 };
 
-openModalButton.addEventListener("click", showModal);
+if (window.location.pathname.indexOf("index") >= 0) {
+  const openModalButton = document.querySelector(".hotel-search__button");
+
+  openModalButton.addEventListener("click", showModal);
+}
+
+navSearchOpenModalButton.addEventListener("click", showModal);
 
 modalCloseButton.addEventListener("click", closeModal);
