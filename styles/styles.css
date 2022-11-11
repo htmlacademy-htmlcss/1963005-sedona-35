@@ -27,6 +27,7 @@ body {
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 21px;
+  word-wrap: break-word;
 
   color: #000000;
   background-color: #F2F2F2;
@@ -117,6 +118,7 @@ svg.sprite {
 
 .button:focus-visible,
 .button:hover {
+  outline: none;
   background-color: #68A2CA;
 }
 
@@ -333,7 +335,7 @@ svg.sprite {
 
 .header-navigation__button {
   width: 160px;
-  padding: 8px 0;
+  padding: 8px;
 
   text-align: center;
   text-transform: uppercase;
@@ -563,7 +565,7 @@ svg.sprite {
 
 .newsletter__subscribe-button {
   width: 232px;
-  padding: 8px 0;
+  padding: 8px;
 
   font-size: 20px;
   line-height: 26px;
@@ -747,7 +749,10 @@ svg.sprite {
   margin-bottom: 18px;
 }
 
-.control-label {
+.control__label {
+  display: block;
+  max-width: 112px;
+
   font-size: 18px;
   line-height: 21px;
 }
@@ -939,7 +944,7 @@ svg.sprite {
 
 .catalog-filter__buttons > .button {
   width: 100%;
-  padding: 8px 0;
+  padding: 8px;
 }
 
 .button-apply {
@@ -1081,9 +1086,12 @@ svg.sprite {
 
 .hotel-card__title {
   align-self: flex-start;
-
   margin-bottom: 16px;
+  max-width: 100%;
+
   text-transform: none;
+  text-align: start;
+
 }
 
 .hotel-card__info {
@@ -1097,13 +1105,21 @@ svg.sprite {
   margin-bottom: 16px;
 }
 
+.hotel-card__filter-result,
+.hotel-card__price {
+  display: block;
+  max-width: 140px;
+
+  text-align: start;
+}
+
 .hotel-card__price {
   font-weight: 400;
 }
 
 .hotel-card__info--buttons .button {
   width: 140px;
-  padding: 7px 0;
+  padding: 7px 8px;
 }
 
 .hotel-rating-grade {
@@ -1134,15 +1150,19 @@ svg.sprite {
 
 .pagination__link {
   width: 60px;
-  padding: 12px 0;
+  padding: 12px 8px;
+  box-sizing: border-box;
 
   font-size: 20px;
   line-height: 36px;
 }
 
-.pagination__link--current-page {
+.pagination__link--current-page,
+.pagination__link--current-page:hover {
   background-color: #F2F2F2;
   color: #000000;
+
+  cursor: default;
 }
 
 .pagination__more-page {
@@ -1481,7 +1501,7 @@ svg.sprite {
 
 .search-form__submit-button {
   width: 100%;
-  padding: 18px 0;
+  padding: 18px ;
 
   font-size: 20px;
   line-height: 24px;
