@@ -1199,6 +1199,7 @@ svg.sprite {
   box-sizing: border-box;
   width: 717px;
   padding: 64px 70px;
+  margin: auto;
 
   border-radius: 30px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);

@@ -1,3 +1,4 @@
+// Открытие и закрытие модального окна
 const body = document.body;
 const modal = document.querySelector(".modal-container");
 const modalCloseButton = modal.querySelector(".modal__close-button");
