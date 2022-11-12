@@ -202,7 +202,7 @@
 
             <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
               <div class="catalog-filter__block-wrapper catalog-filter__block-wrapper--controls-wrapper">
-                <div class="catalog-filter__fildset-container">
+                <div class="catalog-filter__fieldset-container">
                   <fieldset class="catalog-filter__group catalog-filter__group--infrastructure-filter">
                     <legend class="catalog-filter__title title">Инфраструктура:</legend>
 
@@ -240,7 +240,7 @@
                   </fieldset>
                 </div>
 
-                <div class="catalog-filter__fildset-container">
+                <div class="catalog-filter__fieldset-container">
                   <fieldset class="catalog-filter__group catalog-filter__group--housing-filter">
                     <legend class="catalog-filter__title title">Тип жилья:</legend>
 
@@ -285,23 +285,23 @@
 
                   <div class="range-inputs-wrapper">
                     <label class="range-label range-label--min">
-                      <input class="range-input range-input--min field" type="number" value="0" max="9000" name="min-price" aria-label="Введите минимальную ценую">
+                      <input class="range-input range-input--min field" type="number" value="0" max="9000" name="min-price" aria-label="Введите минимальную цену.">
                       <span class="range-input-text range-input-text--min">от</span>
                     </label>
 
                     <label class="range-label range-label--max">
-                      <input class="range-input range-input--max field" type="number" value="9000" min="0" name="max-price">
-                      <span class="range-input-text range-input-text--max" aria-label="Введите минимальную ценую">до</span>
+                      <input class="range-input range-input--max field" type="number" value="9000" min="0" name="max-price" aria-label="Введите максимальную цену.">
+                      <span class="range-input-text range-input-text--max">до</span>
                     </label>
                   </div>
 
                   <div class="range-scale">
                     <div class="range-bar" style="left: 0; width: 227px">
-                      <button class="range-toogle range-toogle--min" type="button">
+                      <button class="range-toggle range-toggle--min" type="button">
                         <span class="visually-hidden">Изменить минимальную цену.</span>
                       </button>
 
-                      <button class="range-toogle range-toogle--max" type="button">
+                      <button class="range-toggle range-toggle--max" type="button">
                         <span class="visually-hidden">Изменить максимальную цену.</span>
                       </button>
                     </div>
@@ -320,8 +320,8 @@
 
         <section class="hotel-sorting">
           <div class="hotel-sorting__sets">
-            <h2 class="hotel-sorting__title title">Найдено гостиниц:
-              <span class="finded-hotel-amount">38</span>
+            <h2 class="hotel-sorting__title title">
+              Найдено гостиниц: 38
             </h2>
 
             <div class="select sorting-type">
@@ -361,7 +361,7 @@
               <a class="hotel-card__link clear-link" href="#">
                 <h3 class="hotel-card__title title">Amara Resort & Spa</h3>
 
-                <img class="hotel-card__image" src="img/amara-resort-and-spa.jpg" width="300" height="212" alt="Гостиница Amara Resort & Spa.">
+                <img class="hotel-card__image" src="img/amara-resort-and-spa.jpg" width="300" height="212" alt="">
               </a>
 
               <div class="hotel-card__info hotel-card__info--sorting">
@@ -375,7 +375,8 @@
               </div>
 
               <div class="hotel-card__info hotel-card__info--rate">
-                <div class="hotel-star-rate hotel-star-rate--four-star" aria-label="Четырёхзвёздочная гостиница." tabindex="0">
+                <div class="hotel-star-rate hotel-star-rate--four-star">
+                  <span class="visually-hidden">Четырёхзвёздочная гостиница.</span>
                   <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#four-star-rate"></use>
                   </svg>
@@ -389,7 +390,7 @@
               <a class="hotel-card__link clear-link" href="#">
                 <h3 class="hotel-card__title title">Villas at Poco Diablo</h3>
 
-                <img class="hotel-card__image" src="img/villas-at-poco-diablo.jpg" width="300" height="212" alt="Гостиница Villas at Poco Diablo.">
+                <img class="hotel-card__image" src="img/villas-at-poco-diablo.jpg" width="300" height="212" alt="">
               </a>
 
               <div class="hotel-card__info hotel-card__info--sorting">
@@ -403,7 +404,8 @@
               </div>
 
               <div class="hotel-card__info hotel-card__info--ratee">
-                <div class="hotel-star-rate hotel-star-rate--four-star" aria-label="Четырёхзвёздочная гостиница." tabindex="0">
+                <div class="hotel-star-rate hotel-star-rate--four-star">
+                  <span class="visually-hidden">Четырёхзвёздочная гостиница.</span>
                   <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#four-star-rate"></use>
                   </svg>
@@ -417,7 +419,7 @@
               <a class="hotel-card__link clear-link" href="#">
                 <h3 class="hotel-card__title title">Desert Quaill Inn</h3>
 
-                <img class="hotel-card__image" src="img/desert-quaill-inn.jpg" width="300" height="212" alt="Гостиница Desert Quaill Inn.">
+                <img class="hotel-card__image" src="img/desert-quaill-inn.jpg" width="300" height="212" alt="">
               </a>
 
               <div class="hotel-card__info hotel-card__info--sorting">
@@ -430,7 +432,8 @@
                 <button class="button favorites-button" type="button">В избранное</button>
               </div>
               <div class="hotel-card__info hotel-card__info--rate">
-                <div class="hotel-star-rate hotel-star-rate--three-star" aria-label="Трёхзвёздочная гостиница." tabindex="0">
+                <div class="hotel-star-rate hotel-star-rate--three-star">
+                  <span class="visually-hidden">Трёхзвёздочная гостиница.</span>
                   <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#three-star-rate"></use>
                   </svg>
@@ -444,7 +447,7 @@
               <a class="hotel-card__link clear-link" href="#">
                 <h3 class="hotel-card__title title">GreenTree Inn</h3>
 
-                <img class="hotel-card__image" src="img/greentree-inn.jpg" width="300" height="212" alt="Гостиница Desert Quaill Inn.">
+                <img class="hotel-card__image" src="img/greentree-inn.jpg" width="300" height="212" alt="">
               </a>
 
               <div class="hotel-card__info hotel-card__info--sorting">
@@ -457,7 +460,8 @@
                 <button class="button favorites-button" type="button">В избранное</button>
               </div>
               <div class="hotel-card__info hotel-card__info--rate">
-                <div class="hotel-star-rate hotel-star-rate--two-star" aria-label="Двухзвёздочная гостиница." tabindex="0">
+                <div class="hotel-star-rate hotel-star-rate--two-star">
+                  <span class="visually-hidden">Двухзвёздочная гостиница.</span>
                   <svg width="140" height="37" viewBox="0 0 140 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="#two-star-rate"></use>
                   </svg>
@@ -468,7 +472,8 @@
             </li>
           </ol>
 
-          <div class="pagination-container" tabindex="0" aria-label="Пагинация страниц.">
+          <div class="pagination-container">
+            <span class="visually-hidden">Пагинация страниц.</span>
             <ul class="pagination clear-list">
               <li class="pagination__item">
                 <a class="button pagination__link pagination__link--current-page clear-link">1</a>

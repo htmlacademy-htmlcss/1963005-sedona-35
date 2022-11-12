@@ -232,7 +232,8 @@ svg.sprite {
 .header-navigation__list {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 100px;
+  max-width: 450px;
+  /* margin-right: 100px; */
 
   font-weight: 700;
   font-size: 20px;
@@ -338,7 +339,6 @@ svg.sprite {
   padding: 8px;
 
   text-align: center;
-  text-transform: uppercase;
 }
 
 .main-container {
@@ -354,7 +354,7 @@ svg.sprite {
 
   background-image: url("../img/index-background.jpg");
   background-repeat: no-repeat;
-  background-color: #82b3d3;
+  background-color: #113a54;
   background-position: center;
   background-size: cover;
 }
@@ -372,6 +372,7 @@ svg.sprite {
 
 .main-index__title {
   margin-bottom: 25px;
+  padding: 0 60px;
 
   font-size: 30px;
   line-height: 36px;
@@ -380,6 +381,7 @@ svg.sprite {
 
 .reasons__title {
   margin-bottom: 90px;
+  padding: 0 80px;
 
   font-weight: 400;
   font-size: 22px;
@@ -395,8 +397,9 @@ svg.sprite {
 
 .reasons__item,
 .reasons__sentence-item {
-  width: 230px;
+  width: 400px;
   padding: 104px 85px 120px;
+  box-sizing: border-box;
 
   text-align: center;
 }
@@ -426,11 +429,19 @@ svg.sprite {
 .reasons__wide-item .wide-item-info-wrapper {
   display: flex;
   flex-direction: column;
-
-  padding: 94px 85px 0;
+  width: 400px;
+  padding: 94px 85px 100px;
+  box-sizing: border-box;
 
   color: #ffffff;
   background-color: #82b3d3;
+}
+
+.reasons-item__image {
+  width: auto;
+  height: auto;
+
+  object-fit: cover;
 }
 
 .reasons__wide-item .reasons-item__title,
@@ -526,7 +537,7 @@ svg.sprite {
   padding: 96px 258px 104px;
 
   color: #ffffff;
-  background-color: #82b3d3;
+  background-color: #31546c;
   background-image: url("../img/subscribe-background.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -657,7 +668,7 @@ svg.sprite {
   padding: 35px 70px 70px;
 
   color: #ffffff;
-  background-color: #82b3d3;
+  background-color: #31546c;
   background-image: url("../img/filter-background.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -898,7 +909,7 @@ svg.sprite {
   background-color: #ffffff;
 }
 
-.range-toogle {
+.range-toggle {
   position: absolute;
   top: -8px;
 
@@ -912,26 +923,26 @@ svg.sprite {
   cursor: pointer;
 }
 
-.range-toogle:focus-visible {
+.range-toggle:focus-visible {
   outline: 3px solid #83b3d3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.range-toogle:hover {
+.range-toggle:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.range-toogle:active {
+.range-toggle:active {
   outline: 2px solid #83b3d3;
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
 }
 
-.range-toogle:disabled {
+.range-toggle:disabled {
   background-color: #817e7e;
   cursor: default;
 }
 
-.range-toogle--max {
+.range-toggle--max {
   right: 0;
 }
 
@@ -965,10 +976,11 @@ svg.sprite {
 
   font-size: 30px;
   line-height: 36px;
+  text-align: start;
 }
 
 .sorting-type {
-  position: relative;
+  margin-right: 70px;
 }
 
 .select-control {
@@ -1134,19 +1146,20 @@ svg.sprite {
 }
 
 .pagination {
-  display: grid;
-  grid-template-columns: repeat(6, 60px);
-  width: 400px;
+  display: flex;
+  min-width: 400px;
   gap: 8px;
 }
 
 .pagination__link {
-  width: 60px;
+  min-width: 60px;
   padding: 12px 8px;
   box-sizing: border-box;
 
   font-size: 20px;
   line-height: 36px;
+
+  overflow-x: visible;
 }
 
 .pagination__link--current-page,
@@ -1160,6 +1173,8 @@ svg.sprite {
 .pagination__more-page {
   background-color: #ffffff;
   color: #000000;
+
+  text-align: center;
 }
 
 .pagination__more-page:focus-visible {
