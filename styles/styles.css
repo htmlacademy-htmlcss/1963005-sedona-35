@@ -33,6 +33,11 @@ body {
   background-color: #f2f2f2;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .clear-link {
   text-decoration: none;
   color: inherit;
@@ -193,8 +198,6 @@ svg.sprite {
 }
 
 .header-wrapper {
-  position: relative;
-
   padding: 0 70px;
 }
 
@@ -205,19 +208,22 @@ svg.sprite {
   justify-content: center;
 }
 
-.page-header__logo-container {
-  width: 140px;
-
-  margin-right: 26px;
-}
-
 .page-header__logo-link {
-  position: absolute;
-  z-index: 1;
-  top: 0;
+  position: relative;
+  align-self: flex-start;
+
+  display: block;
+  width: 140px;
+  margin-right: 26px;
 
   font-size: 0;
   line-height: 0;
+}
+
+.page-header__logo {
+  display: block;
+  position: absolute;
+  z-index: 1;
 }
 
 .header-navigation {
@@ -233,7 +239,6 @@ svg.sprite {
   display: flex;
   flex-wrap: wrap;
   max-width: 450px;
-  /* margin-right: 100px; */
 
   font-weight: 700;
   font-size: 20px;
@@ -438,9 +443,6 @@ svg.sprite {
 }
 
 .reasons-item__image {
-  width: auto;
-  height: auto;
-
   object-fit: cover;
 }
 
@@ -642,23 +644,23 @@ svg.sprite {
   color: rgba(117, 97, 87, 0.3);
 }
 
-.academy-logo__link {
+.academy-logo {
   display: block;
 
   font-size: 0;
   line-height: 0;
 }
 
-.academy-logo__link .academy-logo__logo {
+.academy-logo .academy-logo__logo {
   fill: #000000;
 }
 
-.academy-logo__link:focus-visible .academy-logo__logo,
-.academy-logo__link:hover .academy-logo__logo {
+.academy-logo:focus-visible .academy-logo__logo,
+.academy-logo:hover .academy-logo__logo {
   fill: #756157;
 }
 
-.academy-logo__link:active .academy-logo__logo {
+.academy-logo:active .academy-logo__logo {
   fill: rgba(117, 97, 87, 0.3);
 }
 
